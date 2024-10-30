@@ -1,0 +1,104 @@
+<div class="screenshare-settings">
+  <div class="inline-drawer">
+    <!-- Extension Title option -->
+    <div class="inline-drawer-toggle inline-drawer-header">
+      <b>Screenshare</b>
+      <div
+        class="inline-drawer-icon fa-solid fa-circle-chevron-down down"
+      ></div>
+    </div>
+    <!-- Enabled/Disabled option -->
+    <div class="inline-drawer-content">
+      <div class="screenshare_block flex-container">
+        <input
+          id="screenshare_enabled"
+          type="checkbox"
+          title="Toggle to enable or disable the Screenshare extension."
+        />
+        <label
+          for="screenshare_enabled"
+          title="Toggle to enable or disable the Screenshare extension."
+          >Enabled</label
+        >
+      </div>
+      <!-- Screenshare mode option -->
+      <div class="screenshare_block flex-container">
+        <label
+          for="screenshare_mode"
+          title="The method in which the screenshare images are injected into the context or model."
+          >Mode</label
+        >
+        <select
+          id="screenshare_mode"
+          class="text_pole"
+          title="The method in which the screenshare images are injected into the context."
+        >
+          <option
+            value="mode-inline"
+            title="Automatically interpret inline images using your API model. (REQUIRES MULTIMODAL MODEL)"
+          >
+            Multimodal Inline
+          </option>
+          <option
+            value="mode-caption"
+            title="Utilizes 'Image Captioning' extension. (Check if you can caption images beforehand)"
+          >
+            Image Captioning
+          </option>
+        </select>
+      </div>
+      <!-- Caption prompt option -->
+      <div class="screenshare_block screenshare_prompt_section flex-container">
+        <label for="screenshare_caption_prompt">Caption Prompt</label>
+        <small>
+          The prompt that is used to generate the caption/description of the
+          screen share image.
+        </small>
+        <textarea
+          id="screenshare_caption_prompt"
+          class="text_pole textarea_compact"
+          placeholder="&lt;Default&gt;: Describe what you see in this screencap image."
+        ></textarea>
+      </div>
+      <!-- Caption template option -->
+      <div class="screenshare_block screenshare_prompt_section flex-container">
+        <label for="screenshare_caption_template">Caption Template</label>
+        <small>
+          The template is what gets injected into the context. Ensure you use
+          the
+          <code>{{caption}}</code> placeholder, which is the generated caption
+          of your screencap. The template is only inserted into the last user
+          message.
+        </small>
+        <textarea
+          id="screenshare_caption_template"
+          class="text_pole textarea_compact"
+          placeholder="&lt;Default&gt;: [Screenshared image: {{caption}}]"
+        ></textarea>
+      </div>
+      <!-- Captioning timeout option -->
+      <div class="screenshare_block screenshare_prompt_section flex-container">
+        <label for="screenshare_caption_timeout"
+          >Captioning Timeout
+          <small>(in seconds, 0 = unlimited) &#9888;</small></label
+        >
+        <small>
+          The maximum allowed time for caption generation. If this time elapses,
+          captioning will be canceled, and the user&#8217;s message will be
+          processed as usual.</small
+        >
+        <input
+          id="screenshare_caption_timeout"
+          type="number"
+          class="text_pole wide100p"
+          value="30"
+          min="0"
+          step="1"
+          max="120"
+          placeholder="&lt;Default&gt;: 30"
+        />
+      </div>
+      <hr class="sysHR" />
+    </div>
+  </div>
+</div>
