@@ -5,7 +5,7 @@
   "optional": [],
   "generate_interceptor": "extension_ScreenShare_interceptor",
   "js": "index.js",
-  "css": "",
+  "css": "style.css",
   "author": "Sorkan72",
   "version": "1.0.0",
   "homePage": "https://github.com/Sorkan72/Extension-ScreenShare"
